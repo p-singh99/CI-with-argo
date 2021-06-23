@@ -33,4 +33,21 @@ Create a Continuous Integration pipeline using Argo Events and Argo workflows
 3) Deploy the Eventbus
   - kubectl apply -n argo-events -f https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/eventbus/native.yaml
 
+## Apply the necessary Yaml files
+
+1) Apply the Event Source
+  - kubectl -n argo-events apply -f ${event-source.yaml}
+
+2) Apply the Sensor
+  - kubectl -n argo-events apply -f ${sensor.yaml}
+
+3) Expose the Event Source
+  - kubectl -n argo-events port-forward ${event-source-pod-name} 12000:12000
+
+4) Test out the hook using curl
+  - curl -d '{"message":"this is my first webhook"}' -H "Content-Type: application/json" -X POST http://localhost:12000/example
+
+5) Check the workflow status
+  - kubectl -n argo-events get wf
+
 
