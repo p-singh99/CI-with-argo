@@ -8,7 +8,9 @@ spec:
       - port: 12000
         targetPort: 12000
   webhook:
-    devops-toolkit:
+    # Event-Source can listen to multiple HTTP servers. Define a unique port for each
+    argo-ci-event:
+      # Port to rin the http server on
       port: "12000"
-      endpoint: /devops-toolkit
+      endoint: /argo-ci-event
       method: POST
