@@ -12,5 +12,5 @@ spec:
     argo-ci-event:
       # Port to rin the http server on
       port: "12000"
-      endpoint: /argo-event
+      endpoint: argo-ci-event
       method: POST
