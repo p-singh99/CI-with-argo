@@ -28,7 +28,7 @@ spec:
                 - name: message
                   # the value will get overridden by event payload from test-dep
                   value: hello world
-              0000000000templates:
+              templates:
               - name: whalesay
                 inputs:
                   parameters:
