@@ -17,10 +17,10 @@ Create a Continuous Integration pipeline using Argo Events and Argo workflows
 4) If deploying on cloud, follow the instructions at - https://argoproj.github.io/argo-workflows/argo-server/#access-the-argo-workflows-ui
 
 5) Download the Argo CLI
-  - curl -sLO https://github.com/argoproj/argo/releases/download/v3.0.8/argo-darwin-amd64.gz
-  - gunzip argo-darwin-amd64.gz
-  - chmod +x argo-darwin-amd64
-  - mv ./argo-darwin-amd64 /usr/local/bin/argo
+  - curl -sLO curl -sLO https://github.com/argoproj/argo/releases/download/v3.0.8/argo-linux-amd64.gz
+  - gunzip argo-linux-amd64.gz
+  - chmod +x argo-linux-amd64
+  - mv ./argo-linux-amd64 /usr/local/bin/argo
 
 ## Install Argo Events
 
