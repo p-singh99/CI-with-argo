@@ -37,9 +37,19 @@ Create a Continuous Integration pipeline using Argo Events and Argo workflows
 
 1) Apply the Event Source
   - kubectl -n argo-events apply -f ${event-source.yaml}
+  - For demo, the repo has test-argo-events.yaml
+  
+2) Sensor Service Account - The sensor requires a service account with permission to create resource in argo-events namespace
+  - kubectl -n argo-events apply -f ${service-account.yaml}
+  - For demo, the repo has sensor-service-permissions.yaml
+  
+3) Workflow Service Account - The workflow process within the executor pod requires permissions to create a pod 
+  - kubectl -n argo-events apply -f ${workflow-account.yaml}
+  - For demo, the repo has workflow-service-permissions.yaml
 
 2) Apply the Sensor
   - kubectl -n argo-events apply -f ${sensor.yaml}
+  - For demo, the repo has test-argo-sensor.yaml
 
 3) Expose the Event Source
   - kubectl -n argo-events port-forward ${event-source-pod-name} 12000:12000
